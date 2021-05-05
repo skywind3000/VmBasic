@@ -1,0 +1,44 @@
+; demo.vms
+
+.stack 8192
+
+start:                    ; 0
+  out 2,string1
+  out 10,0
+  ld dword r0,r3
+  cmp int r0,1            ; 14
+  jpc b error             ; 1e
+  push r0                 ; 24
+  call fun1               ; 29
+  cal dword add rs,4      ; 2e
+  out 2,string2           ; 38  11f
+  out 0,r0                ; 42
+  exit
+error:                    ; 4d
+  out 0,0
+  exit
+fun1:                     ; 58
+  push rb                 ; 58
+  ld dword rb,rs          ; 5d
+  ld dword r0,rb          ; 67
+  cal dword add r0,12     ; 71
+  ld dword r0,[r0]        ; 7b
+  cmp int r0,1            ; 85
+  jpc a jmp1              ; 8f
+  jmp jmp2                ; 95
+  jmp1:                   ; 9a
+  push r0                 ; 9a
+  cal int sub r0,1        ; 9f
+  push r0                 ; a9
+  call fun1               ; ae
+  cal dword add rs,4      ; b3
+  ld dword r1,r0          ; bd
+  pop r0		  ; c7
+  cal int mul r0,r1       ; cc
+  jmp2:                   ; d6
+  ld dword rs,rb          ; d6
+  pop rb                  ; e0
+  ret                     ; e5
+data string1 byte "This program is use to work out n!=?",$a,"please input n=",0 ; e6
+data string2 byte "the result is ",0 ; 11f
+end

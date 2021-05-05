@@ -1,0 +1,185 @@
+<html>
+<head>
+<title>VmBasic开发平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<div id="Layer1" style="position:absolute; left:16px; top:15px; width:745px; height:426px; z-index:1"> 
+  <div align="center">
+    <table width="100%" border="0" height="926">
+      <tr> 
+        <td colspan="3" height="57"> 
+          <div align="left"><font color="#000000" size="+2" face="宋体">虚拟机及VmBasic编译引擎说明</font></div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="1" height="40">&nbsp;</td>
+        <td width="494" height="40"><font color="#000000" size="4"><font size="2">1.</font><font color="#000000" size="4"><font size="2"><a href="#part1">关于虚拟机及其编译器的说明</a></font></font><font size="2"><br>
+          2.</font><font color="#000000" size="4"><font color="#000000" size="4"><font size="2"><a href="#part2">VmBasic开发/调试环境的介绍及说明</a></font></font></font><font size="2"><br>
+          3.<a href="#part3">关于其他</a></font></font></td>
+        <td width="217" height="40"> 
+          <table width="95%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><font size="2"><a href="http://softnb.51.net/resource/vmbeta.zip"><font color="#009900">下载地址一</font></a></font></td>
+            </tr>
+            <tr>
+              <td><font size="2"><a href="http://www.joynb.com/resource/vmbeta.zip"><font color="#009900">下载地址二</font></a></font></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="3"> <br>
+          <table width="100%" border="0">
+            <tr> 
+              <td width="2%"><img src="Help/button1.jpg" width="17" height="17"></td>
+              <td><font color="#000000" size="4"><font color="#000000" size="4"><font color="#000000" size="4"><font size="2">关于虚拟机及其编译器的说明</font></font></font><font size="2"><a name="part1"></a></font></font></td>
+            </tr>
+            <tr> 
+              <td width="2%">&nbsp;</td>
+              <td> 
+                <p><font size="2">　　记得3DS/MAX里面实现了一个类似BASIC的脚本，Animator里面实现了一个类C的脚本语言，Autodesk公司的软件对于脚本支持的很出色，好的脚本引擎在乎平台无关性、高效性和扩充性，一个脚本引擎的需要对一个好程序来说非常迫切，于是半年前我写了一款虚拟机，最近又实现了一个类Basic的脚本编译器，特性说明：</font></p>
+                <table width="95%" border="0" height="88">
+                  <tr> 
+                    <td width="2%" height="9"><font size="2">1</font></td>
+                    <td width="98%" rowspan="2"><font size="2">高效性和独立于平台：由于虚拟机运行是解释二进制的字节码因此速度明显快于每次运行及时解释的脚本语言，比如Perl和PHP，而虚拟机的核心程序代码也经过数个C++编译器和平台的测试，可以毫无修改的编译运行于多个操作系统。</font></td>
+                  </tr>
+                  <tr> 
+                    <td width="2%">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td width="2%" height="9"><font size="2">2</font></td>
+                    <td width="98%" rowspan="2"><font size="2">充分的开放：通过虚拟机的端口I/O技术，要对它进行扩充变得十分容易，虚拟机里面两条指令IN/OUT解释程序碰到时并不做解释而是调用专门处理输出输入的函数来工作，因此通过对I/O处理函数的继承重载，扩充变成了一件相当灵活愉快的事情，具体的虚拟机实现和设计说明参考文档　<a href="vmbeta.txt">vmbeta.txt</a> 
+                      </font></td>
+                  </tr>
+                  <tr> 
+                    <td width="2%">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td height="5"><font size="2">3</font></td>
+                    <td><font size="2">可设安全级别：通过可设置安全级别，对程序运行状态进行检控</font></td>
+                  </tr>
+                </table>
+                <p><font size="2">　　通过半年的修改我自己觉得虚拟机够高效开放，就是vmbasic编译器写的没有多高的水准：完全没有对生成代码做优化，弄出许多繁琐的中间代码，不过还是明显快于及时解释语言，通过测试速度大概是DOS自带的QBASIC程序的三倍左右(可以通过目录下的几个算法程序来实验)。</font></p>
+                <p><font size="2">　　为了检验其效率和扩充性，我将虚拟机程序扩充了一些作图功能写成了Windows版本的，然后用vmbasic编写了一个空战小游戏，虽然由于一开始我太相信GDI而没有选择DDraw，且编译器要生成1/2左右的重复性代码，但是仍可以从游戏中看出效率来(可以用vmbide.exe打开fire.bas运行)，关于编译程序VmBasic的更详细说明见<a href="basic.htm">basic.htm</a></font></p>
+                <p><font size="2"> 　　程序说明：压缩档包括虚拟机运行程序(vmbeta.exe)VmBasic调试开发平台(vmbide.exe)四个算法例子(alex1-4.bas)　一个射击游戏例子(fire.bas)及其图片，说明帮助文档若干....</font></p>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <table width="100%" border="0">
+            <tr> 
+              <td width="3%"><img src="Help/button1.jpg" width="17" height="17"></td>
+              <td colspan="2"><font color="#000000" size="4"><font size="2">VmBasic开发/调试环境的介绍及说明<a name="part2"></a></font></font></td>
+            </tr>
+            <tr> 
+              <td width="3%">&nbsp;</td>
+              <td width="57%"> 
+                <table width="95%" border="0" height="328">
+                  <tr> 
+                    <td height="39"><font size="2">右边的图是完整的开发环境左边是语句帮助，中间是代码编写区，下面是编译的错误和过程记录，系统热键说明：</font></td>
+                  </tr>
+                  <tr> 
+                    <td height="18"><font size="2">　1.F8编译成VMS文件</font></td>
+                  </tr>
+                  <tr> 
+                    <td height="12"><font size="2">　2.F9编译并运行程序</font></td>
+                  </tr>
+                  <tr> 
+                    <td height="16"><font size="2">　3.F1对VmBasic的帮助</font></td>
+                  </tr>
+                  <tr> 
+                    <td height="5"><font size="2">　4.Shift+F1帮助IDE</font></td>
+                  </tr>
+                  <tr> 
+                    <td height="2">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td height="14"><font size="2">另外点击运行图表左边的图表可以查看编译出来的虚拟机汇编代码。点击工具目录，可以做一系列设置：虚拟机程序设置，预连接库设置，开发环境设置等，都是简单的东西</font></td>
+                  </tr>
+                  <tr> 
+                    <td height="55">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+              <td width="40%"><img src="Help/Look.gif" width="547" height="355"></td>
+            </tr>
+            <tr> 
+              <td width="3%">&nbsp;</td>
+              <td colspan="2">&nbsp; </td>
+            </tr>
+          </table>
+          <table width="95%" border="0">
+            <tr> 
+              <td> 
+                <table width="95%" border="0">
+                  <tr> 
+                    <td> 
+                      <div align="center"><font size="2">用VmBasic编写的射击小游戏:必须Windows版的虚拟机程序运行(扩充了GDI图形功能)</font></div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td> 
+                      <div align="center"><img src="Help/Look3.GIF" width="637" height="415"></div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td> 
+                      <div align="center"><font size="2">显示查看虚拟机汇编</font></div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td> 
+                      <div align="center"> 
+                        <table width="84%" border="1" cellspacing="0" cellpadding="0">
+                          <tr> 
+                            <td><img src="Help/Look2.GIF" width="550" height="386"></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <table width="100%" border="0">
+            <tr> 
+              <td width="2%"><img src="Help/button1.jpg" width="17" height="17"></td>
+              <td><font color="#000000" size="4"><font color="#000000" size="4"><font color="#000000" size="4"><font size="2">关于其他</font></font></font><font size="2"><a name="part3"></a></font></font></td>
+            </tr>
+            <tr> 
+              <td width="2%" height="22">&nbsp;</td>
+              <td height="22"> 
+                <p><font size="2">　　半年前在论坛上面看见过一些师兄们关于编译的争论，忽然有所感悟，那时刚好写了虚拟机，于是就决定为它写款语言，本来考虑写类C或者类Pascal的，但是想着Basic用起来简单，而且分析起来似乎也简单，后来我才发现虽然没有C的编译难写但由于Basic经历了长时间的发展，语法变化很大，总的来说没有同意的规范，模块表示也不明确，就连IF语句都有好多种版本，所以一个支持函数/过程的Basic编译器我觉得比Pascal难写的多。目录DOS下有DOS环境的编译器和虚拟机，可以用来编译运行非扩展的vmbasic程序:alex1-4.bas，可以在IDE的工具-&gt;设置里面设定虚拟机的运行程序。</font></p>
+                <p><font size="2">　　这是个引擎的演示版本，毕竟好的东西都不是一个人整出来的，我也会在学校不断的学习，非常欢迎<a href="mailto:skywindt@yeah.net">来信</a>讨论相关技术，和游戏/图形程式设计，如果你觉得这套引擎对你有价值，可以写信给我，如果你对相关的东西很感兴趣，也可以写信给我，联系方法：</font></p>
+                <p><font size="2">成都建设路电子科技大学20013080　林伟<br>
+                  邮编：610000<br>
+                  电话：028-83200790<br>
+                  信箱：skywindt@yeah.net <br>
+                  　　　lwwind@yeah.net</font><font size="2"><br>
+                  <br>
+                  无名鸟游戏工作组制作 <a href="http://softnb.51.net">http://softnb.51.net</a>　 
+                  <a href="http://www.joynb.com">http://www.joynb.com</a></font></p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <p align="left">&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

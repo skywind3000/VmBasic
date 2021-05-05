@@ -1,0 +1,26 @@
+新增输出特性：
+
+50.分配一个长为r2,宽为r3的位图返回到r3
+51.删除r3句丙的位图
+52.读入r3字符串所指之文件名的bmp，并且返回r3的bitmap句丙
+53.作图形拷贝工作：具体看r3所指的内存块：
+     int dest                 int colorkey
+     int src                  int y,x
+     int dx,dy,w,h 前后颠倒   int h,w,dy,dx
+     int x,y                  int src
+     int colorkey             int dest
+54.将r3的图形拷贝到屏幕上面
+55.画点r3数据区如下
+     int dest                 int color
+     int x         前后颠倒   int y
+     int y                    int x
+     int color                int dest
+56.读点r3数据区如下
+     int dest
+     int x         前后颠倒   int y,x,dest
+     int y
+57.填充r3数据区如下
+     int dest
+     int x,y,w,h
+     int color
+60.测试r3键盘码是否按下

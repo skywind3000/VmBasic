@@ -1,0 +1,1185 @@
+CALL LABEL0 ; For initialization
+
+;================ MAIN PROG ==================
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 38
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_UP
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 40
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_DOWN
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 37
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_LEFT
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 39
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_RIGHT
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 32
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_SPACE
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 27
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_ESCAPE
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 13
+POP r3
+;</Epression>
+LD int r0,VINT_KEY_ENTER
+LD int [r0],r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 0
+POP r3
+;</Epression>
+LD int r0,VINT_MAX
+LD int [r0],r3
+;<Epression>
+; Flush stack: 16 C  [2]
+PUSH [CSTRING_49]
+POP r2
+IN r3,2
+IN r2,5
+PUSH r3
+POP r3
+;</Epression>
+OUT 2,r3
+IN r3,8
+OUT 4,10
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 0
+POP r3
+;</Epression>
+PUSH r3
+CALL FINT_SEARCH
+CAL int ADD rs,4
+EXIT
+
+;================ FUNCTIONS ==================
+;(FFLO_SIN) Function
+;parcount=1
+FFLO_SIN:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 17  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VFLO_STATIC_FLOAT
+LD int [r0],r3
+LD int r3,[VFLO_STATIC_FLOAT]	;Inline VAsm
+IN [VFLO_STATIC_FLOAT],16	;Inline VAsm
+;<Epression>
+; Flush stack: 17  [1]
+PUSH [VFLO_STATIC_FLOAT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FFLO_SIN_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FFLO_SIN
+
+;(FFLO_COS) Function
+;parcount=1
+FFLO_COS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 17  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VFLO_STATIC_FLOAT
+LD int [r0],r3
+LD int r3,[VFLO_STATIC_FLOAT]	;Inline VAsm
+IN [VFLO_STATIC_FLOAT],17	;Inline VAsm
+;<Epression>
+; Flush stack: 17  [1]
+PUSH [VFLO_STATIC_FLOAT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FFLO_COS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FFLO_COS
+
+;(FFLO_TAN) Function
+;parcount=1
+FFLO_TAN:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 17  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VFLO_STATIC_FLOAT
+LD int [r0],r3
+LD int r3,[VFLO_STATIC_FLOAT]	;Inline VAsm
+IN [VFLO_STATIC_FLOAT],18	;Inline VAsm
+;<Epression>
+; Flush stack: 17  [1]
+PUSH [VFLO_STATIC_FLOAT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FFLO_TAN_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FFLO_TAN
+
+;(FFLO_SQR) Function
+;parcount=1
+FFLO_SQR:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 17  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VFLO_STATIC_FLOAT
+LD int [r0],r3
+LD int r3,[VFLO_STATIC_FLOAT]	;Inline VAsm
+IN [VFLO_STATIC_FLOAT],19	;Inline VAsm
+;<Epression>
+; Flush stack: 17  [1]
+PUSH [VFLO_STATIC_FLOAT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FFLO_SQR_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FFLO_SQR
+
+;(FFLO_ABS) Function
+;parcount=1
+FFLO_ABS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 17  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VFLO_STATIC_FLOAT
+LD int [r0],r3
+LD int r3,[VFLO_STATIC_FLOAT]	;Inline VAsm
+IN [VFLO_STATIC_FLOAT],21	;Inline VAsm
+;<Epression>
+; Flush stack: 17  [1]
+PUSH [VFLO_STATIC_FLOAT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FFLO_ABS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FFLO_ABS
+
+;(FINT_ABS) Function
+;parcount=1
+FINT_ABS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+; If code
+;<Epression>
+; Flush stack: 16 1 <  [3]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+PUSH 0
+POP r1
+POP r0
+CMP int r0,r1
+JPC AE LABEL5
+PUSH 1
+JMP LABEL6
+LABEL5:
+PUSH 0
+LABEL6:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL3
+;<Epression>
+; Flush stack: 16 ^  [2]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r1
+LD int r0,0
+CAL int SUB r0,r1
+PUSH r0
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+JMP LABEL4
+LABEL3:	; Else
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+LABEL4:	; End of If
+FINT_ABS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_ABS
+
+;(FSTR_CHR) Function
+;parcount=1
+FSTR_CHR:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+LD int r0,rb
+CAL int ADD r0,0
+IN [r0],2
+; This is a comment line
+;<Epression>
+; Flush stack: 16 C  [2]
+PUSH [CSTRING_7]
+POP r2
+IN r3,2
+IN r2,5
+PUSH r3
+POP r3
+;</Epression>
+LD int r0,VSTR_STATIC_STR
+LD int r2,r3
+LD int r3,[r0]
+IN r3,5
+LD int r3,r2
+IN r3,8
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT
+LD int [r0],r3
+LD int r3,[VSTR_STATIC_STR]	;Inline VAsm
+LD int r2,0	;Inline VAsm
+LD int r1,[VINT_STATIC_INT]	;Inline VAsm
+IN r1,13	;Inline VAsm
+;<Epression>
+; Flush stack: 16 C  [2]
+PUSH [VSTR_STATIC_STR]
+POP r2
+IN r3,2
+IN r2,5
+PUSH r3
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int r2,r3
+LD int r3,[r0]
+IN r3,5
+LD int r3,r2
+IN r3,8
+FSTR_CHR_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FSTR_CHR
+
+;(FINT_FTIMER) Function
+;parcount=0
+FINT_FTIMER:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+IN [VINT_STATIC_INT],15	;Inline VAsm
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_STATIC_INT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FINT_FTIMER_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_FTIMER
+
+;(FINT_NEWCANVAS) Function
+;parcount=2
+FINT_NEWCANVAS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,16
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT1
+LD int [r0],r3
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT2
+LD int [r0],r3
+LD int r2,[VINT_STATIC_INT1]	;Inline VAsm
+LD int r3,[VINT_STATIC_INT2]	;Inline VAsm
+OUT 50,0	;Inline VAsm
+LD int [VINT_STATIC_INT1],r3	;Inline VAsm
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_STATIC_INT1]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FINT_NEWCANVAS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_NEWCANVAS
+
+;(FINT_FREECANVAS) Function
+;parcount=1
+FINT_FREECANVAS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT
+LD int [r0],r3
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 51,0	;Inline VAsm
+FINT_FREECANVAS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_FREECANVAS
+
+;(FINT_BLITCANVAS) Function
+;parcount=9
+FINT_BLITCANVAS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+LD int r0,VINT_STATIC_INT
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+POP r1
+LD int [r1],r0
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 53,0	;Inline VAsm
+FINT_BLITCANVAS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_BLITCANVAS
+
+;(FINT_LOADCANVAS) Function
+;parcount=1
+FINT_LOADCANVAS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+LD int r0,VINT_STATIC_INT
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+POP r1
+LD int [r1],r0
+LD int r2,[VINT_STATIC_INT]	;Inline VAsm
+LD int r3,[r2]	;Inline VAsm
+OUT 52,0	;Inline VAsm
+LD int [VINT_STATIC_INT],r3	;Inline VAsm
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_STATIC_INT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FINT_LOADCANVAS_EXIT:
+LD int r0,rb
+CAL int ADD r0,12
+LD int r3,[r0]
+IN r3,8
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_LOADCANVAS
+
+;(FINT_SHOWCANVAS) Function
+;parcount=1
+FINT_SHOWCANVAS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT
+LD int [r0],r3
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 54,0	;Inline VAsm
+FINT_SHOWCANVAS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_SHOWCANVAS
+
+;(FINT_PIXEL) Function
+;parcount=4
+FINT_PIXEL:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+LD int r0,VINT_STATIC_INT
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+POP r1
+LD int [r1],r0
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 55,0	;Inline VAsm
+FINT_PIXEL_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_PIXEL
+
+;(FINT_READPIXEL) Function
+;parcount=3
+FINT_READPIXEL:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+LD int r0,VINT_STATIC_INT
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+POP r1
+LD int [r1],r0
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 56,0	;Inline VAsm
+LD int [VINT_STATIC_INT],r3	;Inline VAsm
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_STATIC_INT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FINT_READPIXEL_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_READPIXEL
+
+;(FINT_KEYPRESS) Function
+;parcount=1
+FINT_KEYPRESS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT
+LD int [r0],r3
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 60,0	;Inline VAsm
+LD int [VINT_STATIC_INT],r3	;Inline VAsm
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_STATIC_INT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FINT_KEYPRESS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_KEYPRESS
+
+;(FINT_FILLCANVAS) Function
+;parcount=6
+FINT_FILLCANVAS:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+LD int r0,VINT_STATIC_INT
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+POP r1
+LD int [r1],r0
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 57,0	;Inline VAsm
+FINT_FILLCANVAS_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_FILLCANVAS
+
+;(FINT_CLOSEGRAPH) Function
+;parcount=0
+FINT_CLOSEGRAPH:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+OUT 58,0	;Inline VAsm
+FINT_CLOSEGRAPH_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_CLOSEGRAPH
+
+;(FINT_RANDOM) Function
+;parcount=1
+FINT_RANDOM:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-4
+; This is a comment line
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+LD int r0,VINT_STATIC_INT
+LD int [r0],r3
+LD int r3,[VINT_STATIC_INT]	;Inline VAsm
+OUT 59,0	;Inline VAsm
+LD int [VINT_STATIC_INT],r3	;Inline VAsm
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_STATIC_INT]
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,0
+LD int [r0],r3
+FINT_RANDOM_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_RANDOM
+
+;(FINT_SEARCH) Function
+;parcount=1
+FINT_SEARCH:
+PUSH rb
+LD int rb,rs
+CAL int ADD rs,-12
+; This is a comment line
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+PUSH r3
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 0
+POP r3
+;</Epression>
+POP r1
+CMP dword r1,8
+JPC B LABEL8
+LD int r1,7
+LABEL8:
+LD int r0,VINT_A
+CAL int MUL r1,4
+CAL int ADD r0,r1
+LD int [r0],r3
+LABEL9:	; While code
+;<Epression>
+; Flush stack: 16 16 1 <  [4]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL11
+LD int r3,7
+LABEL11:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+PUSH 8
+POP r1
+POP r0
+CMP int r0,r1
+JPC AE LABEL12
+PUSH 1
+JMP LABEL13
+LABEL12:
+PUSH 0
+LABEL13:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL10
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 1
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,-4
+LD int [r0],r3
+; If code
+;<Epression>
+; Flush stack: 16 1 >  [3]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+PUSH 0
+POP r1
+POP r0
+CMP int r0,r1
+JPC BE LABEL16
+PUSH 1
+JMP LABEL17
+LABEL16:
+PUSH 0
+LABEL17:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL14
+;<Epression>
+; Flush stack: 1  [1]
+PUSH 0
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,-8
+LD int [r0],r3
+LABEL18:	; While code
+;<Epression>
+; Flush stack: 16 16 <  [3]
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r1
+POP r0
+CMP int r0,r1
+JPC AE LABEL20
+PUSH 1
+JMP LABEL21
+LABEL20:
+PUSH 0
+LABEL21:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL19
+; If code
+;<Epression>
+; Flush stack: 16 16 16 16 =  [5]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL24
+LD int r3,7
+LABEL24:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL25
+LD int r3,7
+LABEL25:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+POP r1
+POP r0
+CMP int r0,r1
+JPC NZ LABEL26
+PUSH 1
+JMP LABEL27
+LABEL26:
+PUSH 0
+LABEL27:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL22
+;<Epression>
+; Flush stack: 1 ^  [2]
+PUSH 1
+POP r1
+LD int r0,0
+CAL int SUB r0,r1
+PUSH r0
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,-4
+LD int [r0],r3
+JMP LABEL23
+LABEL22:	; Else
+LABEL23:	; End of If
+; If code
+;<Epression>
+; Flush stack: 16 16 16 16 - 16 16 - = 16 16 16 16 - 16 16 - = |  [19]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL30
+LD int r3,7
+LABEL30:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL31
+LD int r3,7
+LABEL31:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+POP r1
+POP r0
+CAL int SUB r0,r1
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+POP r1
+POP r0
+CAL int SUB r0,r1
+PUSH r0
+POP r1
+POP r0
+CMP int r0,r1
+JPC NZ LABEL32
+PUSH 1
+JMP LABEL33
+LABEL32:
+PUSH 0
+LABEL33:
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL34
+LD int r3,7
+LABEL34:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL35
+LD int r3,7
+LABEL35:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+POP r1
+POP r0
+CAL int SUB r0,r1
+PUSH r0
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+POP r1
+POP r0
+CAL int SUB r0,r1
+PUSH r0
+POP r1
+POP r0
+CMP int r0,r1
+JPC NZ LABEL36
+PUSH 1
+JMP LABEL37
+LABEL36:
+PUSH 0
+LABEL37:
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL28
+;<Epression>
+; Flush stack: 1 ^  [2]
+PUSH 2
+POP r1
+LD int r0,0
+CAL int SUB r0,r1
+PUSH r0
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,-4
+LD int [r0],r3
+JMP LABEL29
+LABEL28:	; Else
+LABEL29:	; End of If
+;<Epression>
+; Flush stack: 16 1 +  [3]
+LD int r0,rb
+CAL int ADD r0,-8
+PUSH [r0]
+PUSH 1
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+POP r3
+;</Epression>
+LD int r0,rb
+CAL int ADD r0,-8
+LD int [r0],r3
+JMP LABEL18
+LABEL19:	; End of While
+JMP LABEL15
+LABEL14:	; Else
+LABEL15:	; End of If
+; If code
+;<Epression>
+; Flush stack: 16 1 >  [3]
+LD int r0,rb
+CAL int ADD r0,-4
+PUSH [r0]
+PUSH 0
+POP r1
+POP r0
+CMP int r0,r1
+JPC BE LABEL40
+PUSH 1
+JMP LABEL41
+LABEL40:
+PUSH 0
+LABEL41:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL38
+; If code
+;<Epression>
+; Flush stack: 16 1 =  [3]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+PUSH 7
+POP r1
+POP r0
+CMP int r0,r1
+JPC NZ LABEL44
+PUSH 1
+JMP LABEL45
+LABEL44:
+PUSH 0
+LABEL45:
+POP r3
+;</Epression>
+CMP int r3,0
+JPC Z LABEL42
+;<Epression>
+; Flush stack: 16 1 +  [3]
+PUSH [VINT_MAX]
+PUSH 1
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+POP r3
+;</Epression>
+LD int r0,VINT_MAX
+LD int [r0],r3
+;<Epression>
+; Flush stack: 16 C  [2]
+PUSH [CSTRING_46]
+POP r2
+IN r3,2
+IN r2,5
+PUSH r3
+POP r3
+;</Epression>
+OUT 2,r3
+IN r3,8
+;<Epression>
+; Flush stack: 16  [1]
+PUSH [VINT_MAX]
+POP r3
+;</Epression>
+OUT 3,r3
+OUT 4,10
+JMP LABEL43
+LABEL42:	; Else
+;<Epression>
+; Flush stack: 16 1 +  [3]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+PUSH 1
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+POP r3
+;</Epression>
+PUSH r3
+CALL FINT_SEARCH
+CAL int ADD rs,4
+LABEL43:	; End of If
+JMP LABEL39
+LABEL38:	; Else
+LABEL39:	; End of If
+;<Epression>
+; Flush stack: 16  [1]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+;</Epression>
+PUSH r3
+;<Epression>
+; Flush stack: 16 16 1 +  [4]
+LD int r0,rb
+CAL int ADD r0,12
+PUSH [r0]
+POP r3
+CMP dword r3,8
+JPC B LABEL47
+LD int r3,7
+LABEL47:
+LD int r0,VINT_A
+CAL int MUL r3,4
+CAL int ADD r0,r3
+PUSH [r0]
+PUSH 1
+POP r1
+POP r0
+CAL int ADD r0,r1
+PUSH r0
+POP r3
+;</Epression>
+POP r1
+CMP dword r1,8
+JPC B LABEL48
+LD int r1,7
+LABEL48:
+LD int r0,VINT_A
+CAL int MUL r1,4
+CAL int ADD r0,r1
+LD int [r0],r3
+JMP LABEL9
+LABEL10:	; End of While
+FINT_SEARCH_EXIT:
+LD int r3,[rb]
+LD int rs,rb
+POP rb
+RET
+; END FUN FINT_SEARCH
+
+
+;================ Init Code ==================
+LABEL0:
+IN [VSTR_STATIC_STR],2
+LD dword [CSTRING_7],CS_CSTRING_7
+LD dword [CSTRING_46],CS_CSTRING_46
+LD dword [CSTRING_49],CS_CSTRING_49
+RET
+LABEL1:
+EXIT
+
+; Declaration:
+LABEL2:
+DATA VFLO_STATIC_FLOAT dword 0
+DATA VSTR_STATIC_STR dword 0
+DATA VINT_STATIC_INT dword 0
+DATA CSTRING_7 dword 0
+DATA CS_CSTRING_7 char " ",0
+DATA VINT_STATIC_INT1 dword 0
+DATA VINT_STATIC_INT2 dword 0
+DATA VINT_KEY_UP dword 0
+DATA VINT_KEY_DOWN dword 0
+DATA VINT_KEY_LEFT dword 0
+DATA VINT_KEY_RIGHT dword 0
+DATA VINT_KEY_SPACE dword 0
+DATA VINT_KEY_ESCAPE dword 0
+DATA VINT_KEY_ENTER dword 0
+DATA VINT_A dword 0
+.BLOCK 32 0
+DATA VINT_MAX dword 0
+DATA CSTRING_46 dword 0
+DATA CS_CSTRING_46 char "FIND ",0
+DATA CSTRING_49 dword 0
+DATA CS_CSTRING_49 char "HELLO",0

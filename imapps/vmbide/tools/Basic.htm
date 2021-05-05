@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Basic帮助</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<div align="center">
+  <h2>VmBasic语法说明</h2>
+  <p align="left">　　<br>
+    　　<b>语法说明</b>　支持整型X,字符串型X$和浮点型X!等三种运算，实现了数组，支持供函数和过程，行号并没有得到支持，BASIC语法版本很多大概语法和DOS下的QBASIC那个版本差不多，实现的语句有IF, 
+    GOTO, GOSUB, RETURN, SUB, FUNCTION, PRINT, INPUT, THEN, ELSE, DIM, WHILE, 
+    WEND。注意，变量X代表整型而Qbasic里面代表浮点变量，另外不支持双精度，所有浮点都是单精度的X! 这个版本没有做FOR...NEXT语句和SELECT语句，可以先用WHILE和IF还有GOTO代替。<br>
+  </p>
+  <p align="left">　　<b>VmBasic的扩展</b>　字符串可以无限长，是虚拟机做特殊支持的。支持灵活的类型转换，直接用等于号就可以了，比如：<br>
+    　　　　　B$=&quot;100&quot;+5<br>
+    　　　　　A=B$<br>
+    　　　　　B$=A+5<br>
+    结果是A=1005,B$=&quot;1010&quot;这样比原来的BASIC更具有灵活的字符串处理能力 </p>
+  <p align="left">　　<b>预连接标准库</b>　在编译开始默认连接的库，通过它的定义和虚拟机的重载实现语言的升级。默认的预连接库是StdLib.VBL里面大部分是一些函数，过程的定义，通过内铅汇编指令VASM(&quot;&quot;)来实现直接控制虚拟机输出输入，目前在StdLib.VBL里面定义的函数或过程有：SIN!, 
+    COS!, TAN!, SQR!, ABS, ABS!, RANDOM, CHR$等常用命令以外提供了一些多媒体命令：<br>
+    　　FTimer()　　　　 　取1ms为单位的时钟<br>
+    　　KeyDown()　　　　　判断一个按键是否被按下<br>
+    　　CreateCanvas(W,H)　创建一个宽W高H的画布并且返回一个标识<br>
+    　　FreeCanvas(Can)　　释放一个画布<br>
+    　　LoadCanvas(FILE$)　从TGA文件中读取一个画布并且返回标试<br>
+    　　Pixel(Can,X,Y,C)　 在画布Can上面画点<br>
+    　　ReadPixel(Can,X,Y) 读取点<br>
+    　　FillCanvas(Can,X,Y,W,H,C) 填充画布<br>
+    　　BlitCanvas(CanDest,CanSrc,DX,DY,W,H,X,Y,ColorKey) 图块Blit拷贝ColorKey小于零则做不透明拷贝<br>
+    　　ShowCanvas(Can)　　将画布显示到虚拟机窗口上<br>
+    　　CloseGraph()　　　 刷新虚拟机窗口，除去ShowCanvas画下的痕迹<br>
+    　　更详细或更多的用法参考Fire.bas看看</p>
+  <p align="left"> 　　关于其他详细内容请参考<a href="readme.htm">Readme.htm</a>虚拟机规范请参考<a href="vmbeta.txt">Vmbeta.txt</a></p>
+  <p align="left"><a href="mailto:skywindt@yeah.net">Skywind</a> @ <a href="http://softnb.51.net"> 
+    softnb.51.net</a> 5/4/2002</p>
+  <p align="left">&nbsp;</p>
+</div>
+</body>
+</html>

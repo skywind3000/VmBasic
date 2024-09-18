@@ -8,7 +8,7 @@
 
 所有资料可以通过下面地址下载：
 
-[下载可执行](http://www.skywind.me/resource/vmbeta.zip) [源程序下载](http://www.skywind.me/resource/skywind/vmbsrc.zip) [设计说明书](http://www.skywind.me/maker/VmBasicDesign.pdf)
+[下载可执行](https://www.skywind.me/resource/vmbeta.zip) [源程序下载](https://www.skywind.me/resource/skywind/vmbsrc.zip) [设计说明书](https://www.skywind.me/maker/VmBasicDesign.pdf)
 
 
 ### 关于虚拟机及其编译器的说明
